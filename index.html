@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>bStyle</title>
+
+        <link rel="stylesheet" href="vendor/bstyle/bstyle.css">
+        <link rel="stylesheet" href="vendor/sspro/sspro.css">
+
+    </head>
+
+    <body>
+
+        <nav class="navbar">
+
+            <div class="item brand">Test</div>
+
+            <div class="item link active"><a href="index.html">Home</a></div>
+            <div class="item link"><a href="index.html">Home</a></div>
+
+        </nav>
+
+        <article>
+
+            <section class="title">Hello, World!</section>
+
+            <section>
+                This is a test. <a href="#" data-trigger="modal" data-target="test-modal">Click me!</a>
+            </section>
+
+            <section>
+                <button onclick="bs.theme.toggle()">Click me to change the theme!</button>
+            </section>
+
+        </article>
+
+        <div class="modal" id="test-modal">
+
+            <section class="title">
+                Yee
+            </section>
+
+        </div>
+
+        <script src="vendor/jquery/jquery.js"></script>
+        <script src="vendor/bstyle/bstyle.js"></script>
+
+    </body>
+
+</html>
