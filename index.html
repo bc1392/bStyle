@@ -28,7 +28,7 @@
             <section class="title">Hello, World!</section>
 
             <section>
-                This is a test. <a href="#" data-trigger="modal" data-target="test-modal">Click me!</a>
+                This is a test. <a href="#" data-trigger="modal-toggle" data-target="test-modal">Click me!</a>
             </section>
 
             <section>
@@ -41,9 +41,18 @@
 
         <div class="modal" id="test-modal">
 
-            <section class="title">Yee</section>
+            <section class="title">Demo Modal</section>
 
-            <section>Stuff</section>
+            <section class="content">
+                Stuff and things can go here.<br>
+                Also this thing can scroll down, try it!<br>
+                <span style="display:block;height:100vh"></span>
+                Wow!
+            </section>
+
+            <section class="actions">
+                <a class="action" href="#" data-trigger="modal-hide" data-target="test-modal">Close</a>
+            </section>
 
         </div>
 

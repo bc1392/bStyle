@@ -16,8 +16,7 @@ body.light button, body.light input, body.light textarea { background-color: #f0
 button { min-height: 1.5rem; } button:focus { box-shadow: 0 0 0.075rem rgba(100, 100, 255, 0.125); } button:active { box-shadow: 0 0 0.15rem rgba(100, 100, 255, 0.25); }
 input { min-height: 1.25rem; padding-left: 0.5rem; padding-right: 0.5rem } input:focus, textarea:focus { box-shadow: 0 0 0.125rem rgba(100, 100, 255, 0.25); }
 body.light input:focus, body.light textarea:focus { background-color: #f4f4f4 !important; } body.dark input:focus, body.dark textarea:focus { background-color: #242424; }
-textarea { margin: 4px 0 -2px 0; font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; text-shadow: 0 0.075rem 0.025rem rgba(0, 0, 0, 0.075); font-size: 0.9rem;
-    padding: 0.125rem 0.25rem }
+textarea { margin: 4px 0 -2px 0; font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; text-shadow: 0 0.075rem 0.025rem rgba(0, 0, 0, 0.075); font-size: 0.9rem; padding: 0.125rem 0.25rem }
 
 /* Navigation Bar */
 nav.navbar { height: 4rem; padding-left: 1.25rem; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); }
@@ -38,17 +37,28 @@ article { padding: 1.25rem 1.25rem 0 1.25rem; font-size: 1.215rem; }
 article > section { padding-bottom: 1.25rem; }  
 article > section.title { font-size: 3rem; text-shadow: 0 0.075rem 0.05rem rgba(0, 0, 0, 0.25); }
 
-/* Modals */
+/* Modal Core */
 div.modal { border: 1px solid; border-radius: .25rem; position: fixed; box-shadow: 0 .125rem .5rem rgba(0, 0, 0, .125); animation-fill-mode: forwards; animation-duration: .5s; }
 body.dark div.modal { background-color: #202020; border-color: #282828; color: #d8d8d8; }
 body.light div.modal { background-color: #f0f0f0; border-color: #e0e0e0; color: #282828; }
-@media only screen and (min-height:   0px) { div.modal { height: 90vh; top:   5vh; } } @media only screen and (min-width:    0px) { div.modal { width:  90vw; left:  5vw; } }
-@media only screen and (min-height: 250px) { div.modal { height: 75vh; top:  12vh; } } @media only screen and (min-width:  500px) { div.modal { width:  80vw; left: 10vw; } }
-@media only screen and (min-height: 500px) { div.modal { height: 50vh; top:  25vh; } } @media only screen and (min-width:  750px) { div.modal { width:  62vw; left: 19vw; } }
-@media only screen and (min-height: 750px) { div.modal { height: 40vh; top:  30vh; } } @media only screen and (min-width: 1000px) { div.modal { width:  40vw; left: 30vw; } }
-@media only screen and (min-height:1000px) { div.modal { height: 34vh; top:  33vh; } } @media only screen and (min-width: 1500px) { div.modal { width:  34vw; left: 33vw; } }
-@media only screen and (min-height:1500px) { div.modal { height: 25vh; top:  37vh; } } /* Sizing Stuff */
-div.modal > section { padding: .25rem .25rem 0 .25rem; font-weight: 300; }
+@media only screen and (min-width:  500px) { div.modal { width:  80vw; left: 10vw; } }
+@media only screen and (min-width:    0px) { div.modal { width:  90vw; left:  5vw; } }
+@media only screen and (min-width:  750px) { div.modal { width:  62vw; left: 19vw; } }
+@media only screen and (min-width: 1000px) { div.modal { width:  40vw; left: 30vw; } }
+@media only screen and (min-width: 1500px) { div.modal { width:  34vw; left: 33vw; } }
+@media only screen and (min-height: 250px) { div.modal { height: 75vh; top:  12vh; } div.modal > section.content { height: calc(75vh - 68px); } }
+@media only screen and (min-height:   0px) { div.modal { height: 90vh; top:   5vh; } div.modal > section.content { height: calc(90vh - 68px); } }
+@media only screen and (min-height: 500px) { div.modal { height: 50vh; top:  25vh; } div.modal > section.content { height: calc(50vh - 68px); } }
+@media only screen and (min-height: 750px) { div.modal { height: 40vh; top:  30vh; } div.modal > section.content { height: calc(40vh - 68px); } }
+@media only screen and (min-height:1000px) { div.modal { height: 34vh; top:  33vh; } div.modal > section.content { height: calc(34vh - 68px); } }
+@media only screen and (min-height:1500px) { div.modal { height: 25vh; top:  37vh; } div.modal > section.content { height: calc(25vh - 68px); } }
+
+/* Modal Sections */
 body.dark div.modal > section { border-color: #282828; } body.light div.modal > section { border-color: #e0e0e0; }
-div.modal > section.title { border-bottom: 1px solid; font-size: 1.25rem; padding: .125rem .25rem; font-weight: 400; border-top-left-radius: .25rem; border-top-right-radius: .25rem; }
-body.dark div.modal > section.title { background-color: #1d1d1d } body.light div.modal > section.title { background-color: #e8e8e8 }
+div.modal > section.title, div.modal > section.actions { font-size: 1.25rem; padding: .125rem .4rem; font-weight: 400; position: relative; }
+div.modal > section.content { padding: .25rem; font-weight: 300; overflow-y: auto; }
+div.modal > section.title { border-bottom: 1px solid; border-top-left-radius: .225rem; border-top-right-radius: .225rem; }
+div.modal > section.actions { border-top: 1px solid; border-bottom-left-radius: .225rem; border-bottom-right-radius: .225rem; }
+body.dark div.modal > section.title, body.dark div.modal > section.actions { background-color: #1d1d1d }
+body.light div.modal > section.title, body.light div.modal > section.actions { background-color: #e8e8e8 }
+div.modal > section.actions a.action { color: #101010; } div.modal > section.actions a.action:hover { color: #404040; text-decoration: none; }

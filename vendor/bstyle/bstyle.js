@@ -9,13 +9,10 @@ const bstyle = {
 
         // Modal setup.
         $('div.modal:not(.shown)').hide()
-        $('a[data-trigger="modal"]').click(function(){
-            const target = $(this).data('target'); const action = $(this).data('action')
-            switch(action) {
-                case 'show': bs.modal.show(target); break; case 'hide': bs.modal.hide(target); break
-                case 'toggle': bs.modal.toggle(target); break; default: bs.modal.show(target)
-            }
-        })
+        $('a[data-trigger="modal"]').click(function(){ bs.modal.show($(this).data('target')) })
+        $('a[data-trigger="modal-show"]').click(function(){ bs.modal.show($(this).data('target')) })
+        $('a[data-trigger="modal-hide"]').click(function(){ bs.modal.hide($(this).data('target')) })
+        $('a[data-trigger="modal-toggle"]').click(function(){ bs.modal.toggle($(this).data('target')) })
 
     },
 
