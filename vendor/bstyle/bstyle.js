@@ -26,11 +26,11 @@ const bstyle = {
 
     // Modals (Get object, check state, show, hide, toggle).
     modal: {
-        get:   function(id) { return $(`div.modal#${id}`) },
-        check: function(id) { if (bs.modal.get(id).hasClass('shown')) {return 'shown'} else {return 'hidden'} },
-        show:  function(id) { bs.modal.get(id).fadeIn().addClass('shown') },
-        hide:  function(id) { bs.modal.get(id).fadeOut().removeClass('shown') },
-        toggle:function(id) { if (bs.modal.check(id) == 'shown') { bs.modal.hide(id) } else { bs.modal.show(id) } }
+        get:    function(id) { return $(`div.modal#${id}`) },
+        check:  function(id) { if (bs.modal.get(id).hasClass('shown')) {return 'shown'} else {return 'hidden'} },
+        show:   function(id) { bs.modal.get(id).fadeIn().addClass('shown') },
+        hide:   function(id) { bs.modal.get(id).fadeOut().removeClass('shown') },
+        toggle: function(id) { if (bs.modal.check(id) == 'shown') { bs.modal.hide(id) } else { bs.modal.show(id) } }
     }
 
 }; const bs = bstyle

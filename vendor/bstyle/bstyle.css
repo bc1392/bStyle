@@ -41,6 +41,8 @@ article > section.title { font-size: 3rem; text-shadow: 0 0.075rem 0.05rem rgba(
 div.modal { border: 1px solid; border-radius: .25rem; position: fixed; box-shadow: 0 .125rem .5rem rgba(0, 0, 0, .125); animation-fill-mode: forwards; animation-duration: .5s; }
 body.dark div.modal { background-color: #202020; border-color: #282828; color: #d8d8d8; }
 body.light div.modal { background-color: #f0f0f0; border-color: #e0e0e0; color: #282828; }
+
+/* Modal Sizing & Position */
 @media only screen and (min-width:  500px) { div.modal { width:  80vw; left: 10vw; } }
 @media only screen and (min-width:    0px) { div.modal { width:  90vw; left:  5vw; } }
 @media only screen and (min-width:  750px) { div.modal { width:  62vw; left: 19vw; } }
